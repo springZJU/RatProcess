@@ -69,17 +69,17 @@ switch protocolStr
     case "clickTrainLongTerm_duration_1235s_4_4o06"
         stimStr = ["1s-4.06-4 Reg", "1s-4-4.06 Reg", "2s-4.06-4 Reg", "2s-4-4.06 Reg","3s-4.06-4 Reg", "3s-4-4.06 Reg","5s-4.06-4 Reg", "5s-4-4.06 Reg"];window = [-6000 2000];
     case "clickTrainLongTerm_Ratio_3_v1_1"
-        stimStr = ["3s-3-3 Reg", "3s-3-3.3 Reg", "3s-3-3.9 Reg", "3s-3-4.5 Reg", "3s-3-5.1 Reg", "3s-3-5.7 Reg"];window = [-4000 2000];
+        stimStr = ["3s-3-3 Reg", "3s-3-3.3 Reg", "3s-3-3.9 Reg", "3s-3-4.5 Reg", "3s-3-5.1 Reg", "3s-3-5.7 Reg"];window = [-4000 2000];FFTWin = [0, 1000]; ICI2 = [3 3.3 3.9 4.5 5.1 5.7];
     case "clickTrainLongTerm_Ratio_3_v1_2"
-        stimStr = ["3s-3-3 Reg", "3s-3-3.3 Reg", "3s-3-3.6 Reg", "3s-3-3.9 Reg", "3s-3-4.2 Reg", "3s-3-4.5 Reg"];window = [-4000 2000];
+        stimStr = ["3s-3-3 Reg", "3s-3-3.3 Reg", "3s-3-3.6 Reg", "3s-3-3.9 Reg", "3s-3-4.2 Reg", "3s-3-4.5 Reg"];window = [-4000 2000];FFTWin = [0, 1000]; ICI2 = [3 3.3 3.6 3.9 4.2 4.5];
     case "clickTrainLongTerm_Ratio_3_v1_3"
         stimStr = ["3s-3-3 Reg", "3s-3-3.15 Reg", "3s-3-3.3 Reg", "3s-3-3.45 Reg", "3s-3-3.6 Reg", "3s-3-3.75 Reg"];window = [-4000 2000];
     case "clickTrainLongTerm_Ratio_2_v1_1"
-        stimStr = ["3s-2-2 Reg", "3s-2-2.2 Reg", "3s-2-2.6 Reg", "3s-2-3 Reg", "3s-2-3.4 Reg", "3s-2-3.8 Reg"];window = [-4000 2000];
+        stimStr = ["3s-2-2 Reg", "3s-2-2.2 Reg", "3s-2-2.6 Reg", "3s-2-3 Reg", "3s-2-3.4 Reg", "3s-2-3.8 Reg"];window = [-4000 2000]; FFTWin = [0, 1000]; ICI2 = [2 2.2 2.6 3 3.4 3.8];
     case "clickTrainLongTerm_Ratio_2_v1_1Rev"
-        stimStr = ["3s-2-2 Reg", "3s-2.2-2 Reg", "3s-2.6-2 Reg", "3s-3-2 Reg", "3s-3.4-2 Reg", "3s-3.8-2 Reg"];window = [-4000 2000];
+        stimStr = ["3s-2-2 Reg", "3s-2.2-2 Reg", "3s-2.6-2 Reg", "3s-3-2 Reg", "3s-3.4-2 Reg", "3s-3.8-2 Reg"];window = [-4000 2000]; FFTWin = [0, 1000]; ICI2 = [2 2 2 2 2 2];
     case "clickTrainLongTerm_Ratio_3_v1_1Rev"
-        stimStr = ["3s-3-3 Reg", "3s-3.3-3 Reg", "3s-3.9-3 Reg", "3s-4.5-3 Reg", "3s-5.1-3 Reg", "3s-5.7-3 Reg"];window = [-4000 2000];
+        stimStr = ["3s-3-3 Reg", "3s-3.3-3 Reg", "3s-3.9-3 Reg", "3s-4.5-3 Reg", "3s-5.1-3 Reg", "3s-5.7-3 Reg"];window = [-4000 2000];FFTWin = [0, 1000]; ICI2 = [3 3 3 3 3 3];
     case "clickTrainLongTerm_3s_123468_1o5"
         stimStr = ["3s-1-1.5 Reg", "3s-2-3 Reg", "3s-3-4.5 Reg", "3s-4-6 Reg", "3s-6-9 Reg", "3s-8-12 Reg"];window = [-4000 2000];
     case "clickTrainLongTerm_3s_123468_1o5Rev"
@@ -89,20 +89,21 @@ switch protocolStr
     case "clickTrainLongTerm_3s_123468_1o9Rev"
         stimStr = ["3s-1.9-1 Reg", "3s-3.8-2 Reg", "3s-5.7-3 Reg", "3s-7.6-4 Reg", "3s-11.4-6 Reg", "3s-15.2-8 Reg"];window = [-4000 2000];
     case "clickTrainLongTerm_3s_123468_1o3"
-        stimStr = ["3s-1-1.3 Reg", "3s-2-2.6 Reg", "3s-3-3.9 Reg", "3s-4-5.2 Reg", "3s-6-7.8 Reg", "3s-8-1.4 Reg"];window = [-4000 2000];
+        stimStr = ["3s-1-1.3 Reg", "3s-2-2.6 Reg", "3s-3-3.9 Reg", "3s-4-5.2 Reg", "3s-6-7.8 Reg", "3s-8-10.4 Reg"];window = [-4000 2000]; FFTWin = [0, 1000]; ICI2 = [1.3 2.6 3.9 5.2 7.8 10.4];
     case "clickTrainLongTerm_3s_123468_1o3Rev"
-        stimStr = ["3s-1.3-1 Reg", "3s-2.6-2 Reg", "3s-3.9-3 Reg", "3s-5.2-4 Reg", "3s-7.8-6 Reg", "3s-10.4-8 Reg"];window = [-4000 2000];
+        stimStr = ["3s-1.3-1 Reg", "3s-2.6-2 Reg", "3s-3.9-3 Reg", "3s-5.2-4 Reg", "3s-7.8-6 Reg", "3s-10.4-8 Reg"];window = [-4000 2000]; FFTWin = [0, 1000]; ICI2 = [1 2 3 4 6 8];
     case "clickTrainLongTerm_3s_124816_1o5"
-        stimStr = ["3s-1-1.5 Reg", "3s-2-3 Reg", "3s-4-6 Reg", "3s-8-12 Reg", "3s-16-24 Reg"];window = [-4000 2000];
+        stimStr = ["3s-1-1.5 Reg", "3s-2-3 Reg", "3s-4-6 Reg", "3s-8-12 Reg", "3s-16-24 Reg"];window = [-4000 2000]; FFTWin = [0, 1000]; ICI2 = [1.5 3 6 12 24];
     case "clickTrainLongTerm_3s_124816_1o5Rev"
-        stimStr = ["3s-1.5-1 Reg", "3s-3-2 Reg", "3s-6-4 Reg", "3s-12-8 Reg", "3s-24-16 Reg"];window = [-4000 2000];
+        stimStr = ["3s-1.5-1 Reg", "3s-3-2 Reg", "3s-6-4 Reg", "3s-12-8 Reg", "3s-24-16 Reg"];window = [-4000 2000]; FFTWin = [0, 1000]; ICI2 = [1 2 4 8 16];
     case "clickTrainLongTerm_duration_0o512345s_2_3"
-        stimStr = ["0.5s-2-3 Reg", "1s-2-3 Reg", "2s-2-3 Reg", "3s-2-3 Reg", "4s-2-3 Reg", "5s-2-3 Reg"];window = [-6000 2000];
+        stimStr = ["0.5s-2-3 Reg", "1s-2-3 Reg", "2s-2-3 Reg", "3s-2-3 Reg", "4s-2-3 Reg", "5s-2-3 Reg"];window = [-6000 2000]; FFTWin = [0, 1000]; ICI2 = [3 3 3 3 3 3];
     case "clickTrainLongTerm_duration_0o512345s_2_3Rev"
-        stimStr = ["0.5s-3-2 Reg", "1s-3-2 Reg", "2s-3-2 Reg", "3s-3-2 Reg", "4s-3-2 Reg", "5s-3-2 Reg"];window = [-6000 2000];
+        stimStr = ["0.5s-3-2 Reg", "1s-3-2 Reg", "2s-3-2 Reg", "3s-3-2 Reg", "4s-3-2 Reg", "5s-3-2 Reg"];window = [-6000 2000]; FFTWin = [0, 1000]; ICI2 = [3 3 3 3 3 3];
     case "clickTrainLongTerm_Oscillation_2_3"
-        stimStr = ["2-3-30ms Reg", "2-3-60ms Reg", "2-3-125ms Reg", "2-3-250ms Reg", "2-3-500ms Reg"];window = [-1000 11000];
+        stimStr = ["2-3-30ms Reg", "2-3-60ms Reg", "2-3-125ms Reg", "2-3-250ms Reg", "2-3-500ms Reg"];window = [-1000 11000]; FFTWin = [1000, 9000]; ICI2 = [0.03, 0.06, 0.125, 0.25, 0.5];
     case "clickTrainLongTerm_Var_2_3"
+%         stimStr = ["2-3-10 Irreg", "2-3-25 Irreg", "2-3-50 Irreg", "2-3-100 Irreg", "2-3-200 Irreg"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [3, 3, 3, 3, 3];
         stimStr = ["2-3-2 Irreg", "2-3-10 Irreg", "2-3-25 Irreg", "2-3-50 Irreg", "2-3-100 Irreg", "2-3-200 Irreg"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [3, 3, 3, 3, 3, 3];
     case "clickTrainLongTerm_Ratio_2_v2_1"
         stimStr = ["3s-2-2 Reg", "3s-2-2.2 Reg", "3s-2-2.6 Reg", "3s-2-3 Reg", "3s-2-3.4 Reg"];window = [-4000 2000];  FFTWin = [0, 1000];  ICI2 = [2, 2.2, 2.6, 3, 3.4];
@@ -120,6 +121,14 @@ switch protocolStr
         stimStr = ["0.5s-4-6 Reg", "1s-4-6 Reg", "2s-4-6 Reg", "3s-4-6 Reg", "4s-4-6 Reg"];window = [-6000 2000]; FFTWin = [0, 1000];ICI2 = [6 6 6 6 6];
     case "clickTrainLongTerm_duration_0o51234s_6_9"
         stimStr = ["0.5s-6-9 Reg", "1s-6-9 Reg", "2s-6-9 Reg", "3s-6-9 Reg", "4s-6-9 Reg"];window = [-6000 2000]; FFTWin = [0, 1000];ICI2 = [9 9 9 9 9];
+    case "clickTrainLongTerm_Oscillation_250500ms_2_3"
+        stimStr = ["250ms", "500ms"];window = [0 10000]; FFTWin = [0, 10000];ICI2 = [2,3];
+    case "clickTrainLongTerm_Oscillation_250500ms_4_6"
+        stimStr = ["250ms", "500ms"];window = [0 10000]; FFTWin = [0, 10000];ICI2 = [2,3];
+    case "clickTrainLongTerm_Oscillation_250500ms_6_9"
+        stimStr = ["250ms", "500ms"];window = [0 10000]; FFTWin = [0, 10000];ICI2 = [2,3];
+    case "clickTrainLongTerm_Oscillation_250500ms_8_12"
+        stimStr = ["250ms", "500ms"];window = [0 10000]; FFTWin = [0, 10000];ICI2 = [2,3];
     case "clickTrainLongTerm_duration_0o51234s_8_12"
         stimStr = ["0.5s-8-12 Reg", "1s-8-12 Reg", "2s-8-12 Reg", "3s-8-12 Reg", "4s-8-12 Reg"];window = [-6000 2000]; FFTWin = [0, 1000];ICI2 = [12 12 12 12 12];
     case "clickTrainLongTerm_Rhythm_1824_1o522o5"
@@ -131,9 +140,47 @@ switch protocolStr
     case "clickTrainLongTerm_Var_4_6"
         stimStr = ["4-6-10 Irreg", "4-6-25 Irreg", "4-6-50 Irreg", "4-6-100 Irreg", "4-6-200 Irreg"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [3, 3, 3, 3, 3];
     case "clickTrainLongTerm_Var_6_9"
-        stimStr = ["6_9-10 Irreg", "6_9-25 Irreg", "6_9-50 Irreg", "6_9-100 Irreg", "6_9-200 Irreg"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [4, 4, 4, 4, 4];
+        stimStr = ["6-9-10 Irreg", "6-9-25 Irreg", "6-9-50 Irreg", "6-9-100 Irreg", "6-9-200 Irreg"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [4, 4, 4, 4, 4];
     case "clickTrainLongTerm_Var_8_12"
-        stimStr = ["8_12-10 Irreg", "8_12-25 Irreg", "8_12-50 Irreg", "8_12-100 Irreg", "8_12-200 Irreg"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [4, 4, 4, 4, 4];
+        stimStr = ["8-12-10 Irreg", "8-12-25 Irreg", "8-12-50 Irreg", "8-12-100 Irreg", "8-12-200 Irreg"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [4, 4, 4, 4, 4];
+    case "clickTrainLongTerm_RegInIrreg_03_2_3"   
+        stimStr = ["2-3 Reg", "3-2 Reg", "2-3-0 Irreg", "3-2-0 Irreg", "2-3-3 Irreg", "3-2-3 Irreg"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [3, 2, 3, 2, 3, 2];
+    case "clickTrainLongTerm_RegInIrreg_03_4_6" 
+        stimStr = ["4-6 Reg", "6-4 Reg", "4-6-0 Irreg", "6-4-0 Irreg", "4-6-3 Irreg", "6-4-3 Irreg"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [4, 6, 4, 6, 4, 6];
+    case "clickTrainLongTerm_RegIrreg_Change_2_3"   
+        stimStr = ["2-3 Reg", "3-2 Reg", "2-3 Change", "3-2 Change"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [3, 2, 3, 2];
+    case "clickTrainLongTerm_RegIrreg_Change_4_6"   
+        stimStr = ["4-6 Reg", "6-4 Reg", "4-6 Change", "6-4 Change"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [4, 6, 4, 6];
+    case "clickTrainLongTerm_RegIrreg_Norm_2_3"   
+        stimStr = ["2-3 Reg", "3-2 Reg", "2-3 Norm", "3-2 Norm"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [3, 2, 3, 2];
+    case "clickTrainLongTerm_RegIrreg_Norm_4_6"   
+        stimStr = ["4-6 Reg", "6-4 Reg", "4-6 Norm", "6-4 Norm"];window = [-6000 2000]; FFTWin = [0, 1000];  ICI2 = [4, 6, 4, 6];
+    case "clickTrainLongTerm_Tone_500250_1o051o5"
+        stimStr = ["500-492 Reg", "250-246 Reg", "500-333 Reg", "250-166 Reg"];window = [-6000 2000];  FFTWin = [0, 1000];  ICI2 = [492, 246, 333, 166];
+    case "clickTrainLongTerm_TITS_16_40"   
+        stimStr = ["16-16 Reg", "16-40 Reg", "40-16 Reg"];window = [-4000 3000];  FFTWin = [0, 2000];  ICI2 = [16,40,16];
+    case "clickTrainLongTerm_TITS_Offset_12_Reg_Irreg_DiffDur"   
+        stimStr = ["250ms-12-Reg" "500ms-12-Reg" "1000ms-12-Reg" "2000ms-12-Reg" "4000ms-12-Reg" "250ms-12-Irreg" "500ms-12-Irreg" "1000ms-12-Irreg" "2000ms-12-Irreg" "4000ms-12-Irreg" "250ms-Noise" "500ms-Noise" "1000ms-Noise" "2000ms-Noise" "4000ms-Noise"];window = [-3000 3000];  FFTWin = [0, 2000];  ICI2 = [12,12,12,12,12,12,12,12,12,12,12,12,12,12,12];
+    case "clickTrainLongTerm_TITS_Offset_12_16_24_Reg_Irreg_Rep"
+        stimStr = ["2s-2s-12-Reg-Rep" "2s-2s-12-Irreg-Rep" "2s-2s-16-Reg-Rep" "2s-2s-16-Irreg-Rep" "2s-2s-24-Reg-Rep" "2s-2s-24-Irreg-Rep"];window = [-3000 3000];  FFTWin = [0, 2000];  ICI2 = [12,12,16,16,24,24];
+    case "clickTrainLongTerm_Ratio_2_3"
+        stimStr = ["3s-2-3 Reg"];window = [-4000 2000];  FFTWin = [0, 1000];  ICI2 = [3];
+    case "clickTrainLongTerm_Offset_2_128_4s"
+        stimStr = ["4s-1 Reg" "4s-2 Reg" "4s-4 Reg" "4s-8 Reg" "4s-16 Reg" "4s-32 Reg" "4s-64 Reg" "4s-128 Reg" "500ms-8" "4s-noise" "4s-15899"];window = [-5000 1000];  FFTWin = [0, 1000];  ICI2 =[1,2,4,8,16,32,64,128,500];
+    case "clickTrainLongTerm_Offset_256_512_10s"
+        stimStr = ["4s-256 Reg" "4s-512 Reg"];window = [-11000 1000];  FFTWin = [0, 1000];  ICI2 =[256,512];
+    case "clickTrainLongTerm_Offset_Duration_Effect_2ms_Reg"
+        stimStr = ["D-1024ms-2 Reg" "D-256ms-2 Reg" "D-128ms-2 Reg" "D-64ms-2 Reg" "D-32ms-2 Reg" "D-16ms-2 Reg" "D-8ms-2 Reg" "D-4ms-2 Reg"  "D-512ms-2 Reg" "D-128ms noise" "D-1024ms noise"];window = [-2000 1000];  FFTWin = [0, 1000];  ICI2 =[2,2,2,2,2,2,2,2,2,2,2];
+    case "clickTrainLongTerm_Offset_Variance_Effect_2ms_16ms_sigma250_2_Reg"
+        stimStr = ["16ms_Var2" "16ms_Var10" "16ms_Var50" "16ms_Var250" "500ms-16ms Reg" "2ms_Var2" "2ms_Var10" "2ms_Var50" "2ms_Var250" "500ms-2ms Reg"];window = [-1500 1000];  FFTWin = [0, 1000];  ICI2 =[16,16,16,16,16,4,4,4,4,4];
+    case "clickTrainLongTerm_Offset_Duration_Effect_16ms_Reg"
+        stimStr = ["D-1024ms-16 Reg"  "D-512ms-16 Reg" "D-256ms-16 Reg" "D-128ms-16 Reg" "D-64ms-16 Reg" "D-32ms-16 Reg" "D-16ms-16 Reg" "D-8ms-16 Reg" "D-4ms-16 Reg" "D-128ms noise" "D-1024ms noise"];window = [-2000 1000];  FFTWin = [0, 1000];  ICI2 =[16,16,16,16,16,16,16,16,16];
+    case "clickTrainLongTerm_Offset_Duration_Effect_4ms_Reg"
+        stimStr = ["D-1024ms-4 Reg"  "D-512ms-4 Reg" "D-256ms-4 Reg" "D-128ms-4 Reg" "D-64ms-4 Reg" "D-32ms-4 Reg" "D-16ms-4 Reg" "D-8ms-4 Reg" "D-4ms-4 Reg" "D-128ms noise" "D-1024ms noise"];window = [-2000 1000];  FFTWin = [0, 1000];  ICI2 =[2,2,2,2,2,2,2,2,2,2,2];
+    case "clickTrainLongTerm_Offset_Variance_Effect_4ms_8ms_sigma250_2_Reg"
+        stimStr = ["8ms_Var2" "8ms_Var10" "8ms_Var50" "8ms_Var250" "500ms-8ms Reg" "4ms_Var2" "4ms_Var10" "4ms_Var50" "4ms_Var250" "500ms-4ms Reg"];window = [-1500 1000];  FFTWin = [0, 1000];  ICI2 =[8,8,8,8,8,4,4,4,4,4];
+    case "clickTrainLongTerm_Offset_Duration_Effect_8ms_Reg"
+        stimStr = ["D-1024ms-8 Reg"  "D-512ms-8 Reg" "D-256ms-8 Reg" "D-128ms-8 Reg" "D-64ms-8 Reg" "D-32ms-8 Reg" "D-16ms-8 Reg" "D-8ms-8 Reg" "D-128ms noise" "D-1024ms noise"];window = [-2000 1000];  FFTWin = [0, 1000];  ICI2 =[8,8,8,8,8,8,8,8];
 
 end
 

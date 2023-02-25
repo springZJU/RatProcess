@@ -1,13 +1,15 @@
 clear all; clc
-recordPath = "E:\ratNeuroPixel\tankData\recording.xlsx";
+mPath = mfilename("fullpath");
+cd(fileparts(mPath));
+recordPath = "..\utils\recording.xlsx";
 recordInfo = table2struct(readtable(recordPath));
 sort = [recordInfo.sort]';
-processed = [recordInfo.processed]';
+exported = [recordInfo.exported]';
 validated = [recordInfo.validateSounds]';
 isECoG = [recordInfo.isECoG]';
-iIndex = find(sort == 1 & processed == 0 & isECoG == 0);  % export sorted and unprocessed spike data
-vIndex = find(processed == 1 & validated == 0 & isECoG == 0); % re-export processed spike data
-eIndex = find(isECoG == 1 & processed ==0); % export ECoG data
+iIndex = find(sort == 1 & exported == 0 & isECoG == 0);  % export sorted and unprocessed spike data
+vIndex = find(exported == 1 & validated == 0 & isECoG == 0); % re-export exported spike data
+eIndex = find(isECoG == 1 & exported ==0); % export ECoG data
 
 %% export sorted and unprocessed spike data 
 for i = iIndex'
@@ -16,7 +18,7 @@ for i = iIndex'
     saveXlsxRecordingData(recordInfo, i, recordPath);
 end
 
-%% re-export processed spike data
+%% re-export exported spike data
 for j = vIndex'
     disp(strcat("validating ", recordInfo(j).BLOCKPATH, "... (", num2str(j), "/", num2str(max(vIndex)), ")"));
     recordInfo = table2struct(readtable(recordPath));

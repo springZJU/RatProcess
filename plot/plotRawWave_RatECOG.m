@@ -8,7 +8,7 @@ function Fig = plotRawWave_RatECOG(chMean, chStd, window, titleStr, plotSize, ch
     end
 
     if nargin < 5
-        plotSize = [6, 6];
+        plotSize = [6, 6
     end
 
     if nargin < 6
@@ -30,13 +30,12 @@ function Fig = plotRawWave_RatECOG(chMean, chStd, window, titleStr, plotSize, ch
     axesPos = [2:5, 7:30, 32:35];
     posNum = 0;
     maximizeFig(Fig);
-    
+
     for rIndex = 1:plotSize(1)
 
         for cIndex = 1:plotSize(2)
             posNum = posNum + 1;
             if chs(rIndex, cIndex) > size(chMean, 1)
-                
                 continue;
             end
             

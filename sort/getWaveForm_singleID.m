@@ -36,7 +36,6 @@ end
 waveFormsMean = mean(waveForms);
 disp(['Completed ' int2str(unitID) ' units of ' int2str(gwfparams.numUnits) '.']);
 
-
 % Package in wf struct
 wf.fs =  fs;
 wf.wfWin = [ 0 gwfparams.wfWin(end)- gwfparams.wfWin(1)];

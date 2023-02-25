@@ -13,8 +13,7 @@ function [trialAll, lfpDataset, soundFold] = ratLfpProcess(DATAPATH, params)
 
 
 %% Parameter settings
-run("paramsConfig.m");
-params = getOrFull(params, paramsDefault);
+params.processFcn = @PassiveProcess_clickTrainContinuous;
 
 paramsNames = fieldnames(params);
 
@@ -33,14 +32,14 @@ try
     load(DATAPATH);
     lfpDataset = data.lfp;
     epocs = data.epocs;
-    trialAll = processFcn(epocs, choiceWin);
+    trialAll = processFcn(epocs);
     soundFold = data.params.soundFold;
 catch e
     disp(e.message);
     disp("Try loading data from TDT BLOCK...");
     temp = TDTbin2mat(DATAPATH, 'TYPE', {'epocs'});
     epocs = temp.epocs;
-    trialAll = processFcn(epocs, choiceWin);
+    trialAll = processFcn(epocs);
 
     temp = TDTbin2mat(DATAPATH, 'TYPE', {'streams'});
     streams = temp.streams;

@@ -33,7 +33,7 @@ data.params = params;
 SAVEPATH = fullfile("E:\ratNeuroPixel\matData", animalID, dateStr, sitePos, paradigm);
 mkdir(SAVEPATH);
 save(fullfile(SAVEPATH, "data.mat"), "data", "-mat");
-recordInfo(idx).processed = 1;
+recordInfo(idx).exported = 1;
 
 writetable(struct2table(recordInfo), recordPath);
 end

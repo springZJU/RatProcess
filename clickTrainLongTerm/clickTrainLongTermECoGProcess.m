@@ -1,10 +1,9 @@
-function clickTrainLongTermECoGProcess(protocolStr, doICA)
+function [trialsLfpByCh, S1Duration, stimStr,window,dateStr] = clickTrainLongTermECoGProcess(protocolStr, doICA, recordate)
 %% Parameter setting
-reprocess = 0;
+reprocess = 0;trialsLfpByCh={};S1Duration=[];stimStr=[];dateStr=[];window=[];
 params.processFcn = @PassiveProcess_clickTrainContinuous;
 fs = 500; % Hz, for downsampling
 rootPath = "E:\ratNeuroPixel\matData";
-
 skipProtocol = ["clickTrainLongTermDecoding"];
 
 paraTemp = protocolStr;
@@ -31,11 +30,15 @@ for pIndex = 1:length(matPath)
     if doICA
         SAVEPATH = strrep(SAVEPATH, "Figure", "ICAFigure");
     end
+    if strcmp(recordate,dateStr)
+    else
     if (exist(SAVEPATH, "dir") && ~reprocess) || ismember(protocolStr, skipProtocol)
+        trialsLfpByCh={};
         continue
     end
-    [trialAll, lfpDataset, soundFold] = ratLfpProcess(DATAPATH, params);
-
+    end
+   [trialAll, lfpDataset, soundFold] = ratLfpProcess(DATAPATH, params);
+ 
     if ~isempty(lfpDataset)
         fs0 = lfpDataset.fs;
     end
@@ -75,6 +78,10 @@ for pIndex = 1:length(matPath)
         [trialsLfp, chLfpMean, chStd] = selectEcog(lfpDataset, trials, "dev onset", window);
         trialsLfp = excludeTrialsChs(trialsLfp, 0.1);
         trialsLfpByCh{dIndex, 1} = changeCellRowNum(trialsLfp);
+    end
+
+    if (exist(SAVEPATH, "dir") && ~reprocess) || ismember(protocolStr, skipProtocol)
+        break
     end
 
     s1s2Fig = plotS1S2LfpECoG(trialsLfpByCh, S1Duration, stimStr, window);

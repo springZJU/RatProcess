@@ -13,11 +13,8 @@ function [trialAll, spikeDataset, lfpDataset, soundFold] = spikeLfpProcess(DATAP
 
 
 %% Parameter settings
-run("paramsConfig.m");
-params = getOrFull(params, paramsDefault);
 
 paramsNames = fieldnames(params);
-
 for index = 1:size(paramsNames, 1)
     eval([paramsNames{index}, '=params.', paramsNames{index}, ';']);
 end
@@ -34,18 +31,22 @@ try
     spikeDataset = spikeByCh(sortrows(data.sortdata, 2));
     lfpDataset = data.lfp;
     epocs = data.epocs;
-    trialAll = processFcn(epocs, choiceWin);
-    soundFold = data.params.soundFold;
+    trialAll = processFcn(epocs);
+
 catch e
     disp(e.message);
     disp("Try loading data from TDT BLOCK...");
     temp = TDTbin2mat(DATAPATH, 'TYPE', {'epocs'});
     epocs = temp.epocs;
-    trialAll = processFcn(epocs, choiceWin);
+    trialAll = processFcn(epocs);
 
     temp = TDTbin2mat(DATAPATH, 'TYPE', {'streams'});
     streams = temp.streams;
-    spikeDataset = spikeByCh(sortrows([temp.snips.eNeu.ts double(temp.snips.eNeu.chan)], 2));
+    try
+        spikeDataset = spikeByCh(sortrows([temp.snips.eNeu.ts double(temp.snips.eNeu.chan)], 2));
+    catch
+        spikeDataset = [];
+    end
     lfpDataset = streams.Llfp;
     soundFold = [];
 end

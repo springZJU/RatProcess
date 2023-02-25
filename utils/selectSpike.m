@@ -1,19 +1,16 @@
-function [res, sampleinfo] = selectSpike(spikeDataset, trials, psthPara, segOption, window, scaleFactor)
-narginchk(3, 6);
+function [res, sampleinfo] = selectSpike(spikeDataset, trials, CTLParams, segOption)
+narginchk(3, 4);
 
 if nargin < 4
     segOption = "trial onset";
 end
 
-if nargin < 5
-    window = [-3000, 7000];
+CTLFields = string(fields(CTLParams));
+for fIndex = 1 : length(CTLFields)
+    eval(strcat(CTLFields(fIndex), "= CTLParams.", CTLFields(fIndex), ";"));
 end
 
-if nargin < 6
-    scaleFactor = 1e3;
-end
-
-windowIndex = window;
+windowIndex = Window;
 
 switch segOption
     case "trial onset"
@@ -34,7 +31,6 @@ end
 if isempty(segIndex)
     trialSpike{1} = 0;
     sampleinfo = [];
-
 else
 
 
@@ -43,23 +39,20 @@ else
     end
 
     % by channel
-
+    trialSpike = cell(length(length(segIndex)), length(spikeDataset));
     for cIndex = 1 : length(spikeDataset)
-        spikeTemp = spikeDataset(cIndex).spike;
         % by trial
-        trialSpike{cIndex, 1} = cell(length(segIndex), 1);
         sampleinfo = zeros(length(segIndex), 2);
         temp = spikeDataset(cIndex).spike;
 
-        for index = 1:length(segIndex)
-            sampleinfo(index, :) = [segIndex(index) + windowIndex(1), segIndex(index) + windowIndex(2)];
-            trialSpike{cIndex, 1}{index, 1}(:, 1) = temp(temp > segIndex(index) + windowIndex(1) & temp < segIndex(index) + windowIndex(2)) - segIndex(index);
-            trialSpike{cIndex, 1}{index, 1}(:, 2) = ones(length(trialSpike{cIndex, 1}{index, 1}), 1) * index;
+        for tIndex = 1:length(segIndex)
+            sampleinfo(tIndex, :) = segIndex(tIndex) + windowIndex;
+            trialSpike{tIndex, cIndex}(:, 1) = temp(temp > sampleinfo(tIndex, 1) & temp < sampleinfo(tIndex, 2)) - segIndex(tIndex);
+            trialSpike{tIndex, cIndex}(:, 2) = ones(length(trialSpike{tIndex, cIndex}), 1) * tIndex;
         end
-        spikePlot{cIndex, 1} = cell2mat(trialSpike{cIndex, 1});
-        PSTH{cIndex, 1} = calPsth(spikePlot{cIndex, 1}(:, 1), psthPara, 1e3, 'EDGE', window, 'NTRIAL', length(trials));
+        %         PSTH{tIndex, cIndex} = calPsth(spikePlot{cIndex, 1}(:, 1), psthPara, scaleFactor, 'EDGE', Window, 'NTRIAL', length(trials));
     end
-    res = struct("ch", {spikeDataset.ch}', "realCh", {spikeDataset.realCh}', "trialSpike", trialSpike, "spikePlot", spikePlot, "PSTH", PSTH);
-    return;
+    res= cell2struct(trialSpike, string(cellfun(@(x) strcat("CH", string(num2str(x))), {spikeDataset.ch}', "uni", false)), 2);
+        return;
 end
 end
